@@ -35,11 +35,13 @@
                 private:
                     $selected$$end$
                 public:
-                    $name$(const $name$&) = delete;
-                    $name$($name$&&) = default;
+                    $name$() = delete; /* C.126 */
 
-                    $name$& operator=(const $name$&) = delete;
-                    $name$& operator=($name$&&) = default;
+                    $name$(const $name$&) = delete;
+                    $name$($name$&&) = delete; /* C.21 */
+
+                    $name$& operator=(const $name$&) = delete; /* C.67 */
+                    $name$& operator=($name$&&) = delete;
 
                     virtual ~$name$() noexcept {} /* C.127 */
 
