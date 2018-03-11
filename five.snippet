@@ -27,21 +27,21 @@
         <Snippet>
             <Declarations>
                 <Literal>
-                    <ID>class</ID>
+                    <ID>name</ID>
                     <ToolTip>Class Name</ToolTip>
-                    <Default>class_name</Default>
+                    <Default>MyClass</Default>
                 </Literal>
             </Declarations>
             <Code Language="CPP" Kind="method decl">
-                <![CDATA[$class$(); /* default ctor */;
+                <![CDATA[$name$();
 
-                $class$(const $class$&); /* copy ctor */
-                $class$($class$&&) noexcept; /* move ctor */
+                $name$(const $name$&);
+                $name$($name$&&) noexcept;
 
-                $class$& operator=(const $class$&); /* copy = */
-                $class$& operator=($class$&&) noexcept; /* move = */
+                $name$& operator=(const $name$&);
+                $name$& operator=($name$&&) noexcept;
 
-                ~$class$() noexcept; /* destructor */ ]]>
+                ~$name$() noexcept;]]>
             </Code>
         </Snippet>
     </CodeSnippet>
