@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- classm.snippet - Visual Studio-compatible snippet for a simple C++ class.
+<!-- classbase.snippet - Visual Studio-compatible snippet for a virtual base
+    class. This snippet is meant to help create programs adhering the the
+    CPP Core Guidelines.
 
     Written in 2018 by Matthew Nakayama matthewnakayama@gmail.com
 
@@ -31,9 +33,8 @@
                     <Default>MyClass</Default>
                 </Literal>
             </Declarations>
+            <!-- No private section, since virtual base should not have data (C.-->
             <Code Language="cpp"><![CDATA[class $name$ {
-                private:
-                    $selected$$end$
                 public:
                     $name$() = delete; /* C.126 */
 
@@ -46,6 +47,8 @@
                     virtual ~$name$() noexcept {} /* C.127 */
 
                     virtual std::unique_ptr<$name$> clone(); /* C.67 */
+
+                    $selected$$end$
                 };]]>
             </Code>
         </Snippet>
